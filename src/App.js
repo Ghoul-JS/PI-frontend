@@ -4,6 +4,10 @@ import CardPrueba from './components/homePage/cards/CardPrueba.jsx'
 import LadingPage from './components/ladingPage/LadingPage.jsx'
 import DetailGame from './components/detailGame/DetailGame.jsx'
 import Form from './components/createForm/Form.jsx'
+import axios from 'axios';
+
+// axios.defaults.baseURL = "http://localhost:3001" 
+axios.defaults.baseURL = "https://pi-back-production-e280.up.railway.app/"
 
 function App() {
   return (
