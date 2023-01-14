@@ -1,4 +1,5 @@
 import axios from "axios"
+import Swal from 'sweetalert2'
 
 export const getVideoGames = () => {
   return async function (dispatch) {
@@ -40,7 +41,14 @@ export const filterGameByName = (payload) => {
   return async function(dispatch) {
     try{
       const response = await axios.get(`/videogames?name=${payload}`);
-      if(response.status === 404) alert("This Videogame doesn't exist");
+      if(response.status === 404) {
+        Swal.fire({
+          title: 'Error!',
+          text: 'This Videogame does not exist',
+          icon: 'error',
+          confirmButtonText: 'Ok'
+        })
+      }
       const data = response.data;      
       dispatch({
         type: "FILTER_VIDEOGAME_NAME",

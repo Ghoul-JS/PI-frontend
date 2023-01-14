@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import style from "./form.module.css";
 import { getGenres, postNewVideoGame } from "../../redux/actions";
 import validation from "./validation";
+import Swal from 'sweetalert2'
 
 export default function Form() {
 
@@ -95,7 +96,11 @@ export default function Form() {
                     [e.target.name]:e.target.value
                 })
             )
-            alert("Game created successfully")
+            Swal.fire({
+                title: 'Cool!',
+                text: 'Game created successfully',
+                icon: 'success'
+              })
         } else {
             alert('You must comple the form')
         }   
