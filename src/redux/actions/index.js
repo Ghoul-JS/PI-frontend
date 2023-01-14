@@ -7,7 +7,7 @@ export const getVideoGames = () => {
       //se toma el dispatch como arguento para mandar un enviar un tipo de accion
       dispatch({
         type: "GET_VIDEOGAMES",
-        payload: response.data.game, 
+        payload: response.data
       });
     } catch (error) {
       dispatch({
