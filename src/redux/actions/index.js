@@ -41,7 +41,7 @@ export const filterGameByName = (payload) => {
   return async function(dispatch) {
     try{
       const response = await axios.get(`/videogames?name=${payload}`);
-      if(response.status === 404) {
+      if(response.status !== 200) {
         Swal.fire({
           title: 'Error!',
           text: 'This Videogame does not exist',
