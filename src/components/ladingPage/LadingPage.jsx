@@ -9,7 +9,7 @@ export default function LadingPage() {
             <button className={style.startButton}>
                 <Link to='/videogames'>PRESS START</Link>
             </button>
-            <p>By JOJOse</p>
+            <p className={style.txtP}>By JOJOse</p>
         </div>
     )
 }
